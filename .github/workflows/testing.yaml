@@ -7,7 +7,7 @@ on:
         branches: [main]
 
 jobs:
-    linting:
+    testing:
         runs-on: ubuntu-latest
 
         steps:
