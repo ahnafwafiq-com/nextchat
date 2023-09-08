@@ -1,25 +1,36 @@
 {
   "name": "nextchat",
   "version": "0.1.0",
+  "homepage": "https://nextchat.ahnafwafiq.com",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "prettier": "prettier . --write",
+    "prettier:check": "prettier . --check",
+    "pre:commit": "concurrently \"npm run lint\" \"npm run typecheck\" \"npm run prettier\""
   },
   "dependencies": {
+    "next": "13.4.19",
+    "nodemailer": "^6.9.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.4.15",
+    "tailwindcss": "3.3.3",
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
+    "postcss": "8.4.29",
     "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.15",
+    "@types/nodemailer": "^6.4.9",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
-    "next": "13.4.19",
-    "postcss": "8.4.29",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3",
+    "concurrently": "^8.2.1",
+    "prettier": "^3.0.3",
     "typescript": "5.2.2"
   }
 }
